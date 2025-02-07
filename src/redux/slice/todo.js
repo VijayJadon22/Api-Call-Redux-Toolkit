@@ -32,6 +32,7 @@ const todoSlice = createSlice({
         // Sets isError to true if there was an error fetching data
         builder.addCase(fetchTodos.rejected, (state, action) => {
             console.log("Error fetching todos: ", action.payload);
+            state.isLoading = false;
             state.isError = true;
         });
     }
